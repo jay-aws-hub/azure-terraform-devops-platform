@@ -1,0 +1,29 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: Terraform_Plan
+  jobs:
+  - job: plan
+    steps:
+    - task: TerraformInstaller@1
+      inputs:
+        terraformVersion: '1.6.0'
+
+    - script: |
+        terraform init
+        terraform plan
+      workingDirectory: environments/dev
+
+- stage: Terraform_Apply
+  dependsOn: Terraform_Plan
+  condition: manual()
+  jobs:
+  - job: apply
+    steps:
+    - script: |
+        terraform apply -auto-approve
+      workingDirectory: environments/dev
