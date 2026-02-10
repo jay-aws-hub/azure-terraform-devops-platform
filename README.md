@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # azure-terraform-devops-platform
 Enterprise-grade Azure infrastructure provisioned using Terraform and deployed via Azure DevOps YAML pipelines. Includes modular IaC, secure RBAC, remote state management, and CI/CD automation.
 =======
@@ -26,4 +25,4 @@ This project demonstrates an enterprise-grade Azure infrastructure provisioned u
 
 ## Skills Demonstrated
 Terraform, Azure DevOps, IaC, CI/CD, Azure Networking, Cloud Architecture
->>>>>>> b21aab5 (Add project documentation)
+>>>>>>> b21aab5
